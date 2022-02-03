@@ -1,0 +1,64 @@
+@use "./modules/colors";
+@use "./modules/sizes";
+
+
+.container {
+  padding: 1rem;
+  margin: auto;
+  background-color: colors.$white;
+  max-width: sizes.$maxPageWidth;
+}
+
+.form {
+  >:first-child {
+    width: -webkit-fill-available;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  >* {
+    margin-block: 0;
+    margin-right: 0;
+  }
+}
+
+.description {
+  text-align: center;
+}
+
+.translationsContainer {
+  display: grid;
+  gap: 1rem;
+}
+
+.pinnedTranslations {
+}
+
+.unpinnedTranslations {
+}
+
+.maxEntriesWarning{
+  color: colors.$secondaryAccent;
+}
+
+@media only screen and (min-width: 475px) {
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >:first-child {
+      width: auto;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .translationsContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+

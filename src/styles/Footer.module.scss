@@ -1,0 +1,45 @@
+@use "./modules/colors";
+@use "./modules/sizes";
+@use "sass:color";
+
+.container {
+  height: min-content;
+
+}
+
+.hr {
+  margin: auto;
+  max-width: sizes.$maxPageWidth;
+  height: 2px;
+  background-color: colors.$white;
+  div {
+    background-color: colors.$secondary;
+    width: calc(100% - 2rem);
+    height: 100%;
+    margin: auto;
+  }
+}
+
+.createdBy {
+  background-color: colors.$white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .5rem;
+  width: -webkit-fill-available;
+  max-width: sizes.$maxPageWidth;
+  padding: 1rem;
+  margin: auto;
+  
+}
+
+.twitter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1DA1F2;
+    width: 2ch;
+    &:hover {
+      color: color.scale(#1DA1F2, $lightness: 10%);
+    }
+}

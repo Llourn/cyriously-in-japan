@@ -1,0 +1,11 @@
+@use "../modules/colors";
+
+.kanaDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: colors.$primary;
+  >p {
+    padding-inline: .5rem;
+  }
+}

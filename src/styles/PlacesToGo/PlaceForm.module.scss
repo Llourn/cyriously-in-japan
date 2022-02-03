@@ -1,0 +1,74 @@
+@use "../modules/colors";
+
+.container {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+}
+
+.formContainer {
+  max-width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: colors.$primary;
+  border-left: 1px solid colors.$black;
+  border-right: 1px solid colors.$black;
+  padding: 1rem;
+}
+
+.titleInput {
+  width: -webkit-fill-available;
+}
+
+.fileInput {
+  width: -webkit-fill-available;
+}
+
+.textAreaInput {
+  width: -webkit-fill-available;
+  
+}
+
+.mapContainer {
+  height: calc(400px + 4rem);
+  input {
+    width: -webkit-fill-available;
+  }
+  
+}
+
+.buttonContainer {
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 4rem 4rem;
+  >button {
+    min-height: 3rem;
+  }
+}
+
+
+
+.errors {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    span {
+      color: colors.$danger;
+    }
+}
+
+.imageErrorMessage {
+  margin-top: 0;
+  color: colors.$danger;
+}
+
+@media only screen and (min-width: 600px) {
+
+}

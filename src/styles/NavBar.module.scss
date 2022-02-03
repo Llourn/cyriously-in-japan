@@ -1,0 +1,119 @@
+@use "./modules/colors";
+@use "./modules/sizes";
+@use "sass:color";
+
+.navBar {
+  background-color: colors.$secondary;
+  border-bottom: colors.$black solid 2px;
+  position: sticky;
+  z-index: 999;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: sizes.$maxPageWidth;
+  margin: 0 auto;
+  padding: 0 1rem;
+  z-index: 1000;
+  background-color: colors.$secondary;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: clamp(1rem, 7vw, 1.8rem);
+  font-weight: bolder;
+  color: colors.$black;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.menuImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.menuImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  > :first-child {
+    height: 70%;
+    width: 70%;
+    > * {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &:hover {
+    background-color: color.scale(colors.$secondary, $lightness: -20%);
+  }
+}
+
+.profilePicture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  img {
+    border: colors.$black solid 2px;
+    height: 90%;
+    width: 90%;
+    border-radius: 50vw;
+  }
+}
+
+.menuList {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  border-width: 0 2px 0 2px;
+  border-style: solid;
+  border-color: colors.$black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      white-space: nowrap;
+      background-color: colors.$secondary;
+      margin: 0;
+      padding: 0.5rem;
+      border-bottom: 2px solid colors.$black;
+      &.last {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      &:hover {
+        background-color: color.scale(colors.$secondary, $lightness: -20%);
+      }
+    }
+  }
+  a {
+    color: colors.$black;
+  }
+}
+
+.open {
+  top: calc(3rem + 2px);
+}
+
+.closed {
+  bottom: 0;
+}

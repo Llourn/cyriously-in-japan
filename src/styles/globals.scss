@@ -1,0 +1,106 @@
+@use "./modules/colors";
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap');
+
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: colors.$black;
+  background-color: colors.$primary;
+  font-size: 16px;
+}
+
+a {
+  color: colors.$primaryAccent;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: 2px solid colors.$primary;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem;
+  background-color: colors.$primary;
+  cursor: pointer;
+  outline-offset: .25rem;
+  color: colors.$black;
+  text-transform: uppercase;
+  font-family: inherit;
+  &:hover {
+    background-color: color.scale(colors.$primary, $lightness: 10%);
+  }
+  &.danger{
+    background-color: colors.$danger;
+    border: 2px solid colors.$danger;
+    
+    &:hover {
+      background-color: color.scale(colors.$danger, $lightness: 10%);
+    }
+  }
+  
+  &.success {
+    background-color: colors.$success;
+    border: 2px solid colors.$success;
+    
+    &:hover {
+      background-color: color.scale(colors.$success, $lightness: 10%);
+    }
+    
+  }
+  
+  &.icon {
+    aspect-ratio: 1;
+    padding: .5rem;
+    width: 46px;
+    height: 46px;
+    color: colors.$white;
+    >*{
+      height: 100%;
+      width: 100%;
+    }
+  }
+  
+  &:disabled {
+    background-color: colors.$disabled;
+    color: color.scale(colors.$disabled, $lightness: 20%);
+    border-color: color.scale(colors.$disabled, $lightness: 20%);;
+    cursor: default;
+    &:hover {
+      background-color: colors.$disabled;
+    }
+  }
+}
+
+input, textarea {
+  min-height: 46px;
+  font: inherit;
+  margin-bottom: 1rem;
+  padding:.5rem;
+  border: 3px solid colors.$primary;
+  border-radius: 5px;
+  outline-offset: .25rem;
+  &:disabled {
+    color: colors.$disabled;
+    background-color: color.scale(colors.$disabled, $lightness: 20%);
+    border-color: colors.$disabled;
+    cursor: default;
+  }
+}
+
+input[type='checkbox'] {
+  height: 20px;
+  width: 20px;
+  min-width: 20px;
+  padding: 0;
+  margin: 0 1rem 0 0;
+}
+
