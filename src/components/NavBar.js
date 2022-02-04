@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import styles from "../styles/NavBar.module.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,12 +30,6 @@ const NavBar = () => {
 
   const menuClickHandler = () => {
     setMenuOpen(!menuOpen);
-  };
-
-  const closeMenu = () => {
-    if (menuOpen) {
-      menuClickHandler();
-    }
   };
 
   const logInHandler = (e) => {
@@ -74,14 +68,15 @@ const NavBar = () => {
               </div>
               <div className={menuClassName}>
                 <ul>
-                  <li onClick={() => navigate("/placestogo")}>Places To Go</li>
-                  <li onClick={() => navigate("/kanacheck")}>Kana Check</li>
-                  <li
-                    className={styles.last}
-                    onClick={() => navigate("/converter")}
-                  >
-                    JA ⇔ EN Converter
-                  </li>
+                  <Link to="/placestogo">
+                    <li>Places To Go</li>
+                  </Link>
+                  <Link to="/kanacheck">
+                    <li>Kana Check</li>
+                  </Link>
+                  <Link to="/converter">
+                    <li className={styles.last}>JA ⇔ EN Converter</li>
+                  </Link>
                 </ul>
               </div>
             </div>

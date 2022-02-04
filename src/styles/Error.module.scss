@@ -1,0 +1,9 @@
+@use "./modules/colors";
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background-color: colors.$white;
+  padding: 1rem;
+  text-align: center;
+}
